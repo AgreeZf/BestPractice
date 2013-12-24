@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.zfogde.com/wcf/BeerInventoryService" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.zfogde.com/wcf/BeerInventoryService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.zfogde.com/wcf/BeerInventoryService/Imports">
+      <xsd:import namespace="http://www.zfogde.com/wcf/BeerInventoryService" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="BeerInventoryService_JoinParty_InputMessage">
+    <wsdl:part name="parameters" element="tns:JoinParty" />
+  </wsdl:message>
+  <wsdl:message name="BeerInventoryService_JoinParty_OutputMessage">
+    <wsdl:part name="parameters" element="tns:JoinPartyResponse" />
+  </wsdl:message>
+  <wsdl:message name="BeerInventoryService_MakeBeerRun_InputMessage">
+    <wsdl:part name="parameters" element="tns:MakeBeerRun" />
+  </wsdl:message>
+  <wsdl:message name="BeerInventoryService_MakeBeerRun_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MakeBeerRunResponse" />
+  </wsdl:message>
+  <wsdl:message name="BeerInventoryService_DrinkBeer_InputMessage">
+    <wsdl:part name="parameters" element="tns:DrinkBeer" />
+  </wsdl:message>
+  <wsdl:message name="BeerInventoryService_DrinkBeer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DrinkBeerResponse" />
+  </wsdl:message>
+  <wsdl:message name="BeerInventoryService_LeaveParty_InputMessage">
+    <wsdl:part name="parameters" element="tns:LeaveParty" />
+  </wsdl:message>
+  <wsdl:message name="BeerInventoryService_LeaveParty_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LeavePartyResponse" />
+  </wsdl:message>
+  <wsdl:message name="BeerInventoryService_NotifyJoinParty_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyJoinParty" />
+  </wsdl:message>
+  <wsdl:message name="BeerInventoryService_NotifyBeerChanged_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyBeerChanged" />
+  </wsdl:message>
+  <wsdl:message name="BeerInventoryService_NotifyLeaveParty_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyLeaveParty" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="true" name="BeerInventoryService">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="JoinParty">
+      <wsdl:input wsaw:Action="http://www.zfogde.com/wcf/BeerInventoryService/BeerInventoryService/JoinParty" message="tns:BeerInventoryService_JoinParty_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.zfogde.com/wcf/BeerInventoryService/BeerInventoryService/JoinPartyResponse" message="tns:BeerInventoryService_JoinParty_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="MakeBeerRun">
+      <wsdl:input wsaw:Action="http://www.zfogde.com/wcf/BeerInventoryService/BeerInventoryService/MakeBeerRun" message="tns:BeerInventoryService_MakeBeerRun_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.zfogde.com/wcf/BeerInventoryService/BeerInventoryService/MakeBeerRunResponse" message="tns:BeerInventoryService_MakeBeerRun_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DrinkBeer">
+      <wsdl:input wsaw:Action="http://www.zfogde.com/wcf/BeerInventoryService/BeerInventoryService/DrinkBeer" message="tns:BeerInventoryService_DrinkBeer_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.zfogde.com/wcf/BeerInventoryService/BeerInventoryService/DrinkBeerResponse" message="tns:BeerInventoryService_DrinkBeer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="LeaveParty">
+      <wsdl:input wsaw:Action="http://www.zfogde.com/wcf/BeerInventoryService/BeerInventoryService/LeaveParty" message="tns:BeerInventoryService_LeaveParty_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.zfogde.com/wcf/BeerInventoryService/BeerInventoryService/LeavePartyResponse" message="tns:BeerInventoryService_LeaveParty_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="NotifyJoinParty">
+      <wsdl:output wsaw:Action="http://www.zfogde.com/wcf/BeerInventoryService/BeerInventoryService/NotifyJoinParty" message="tns:BeerInventoryService_NotifyJoinParty_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="NotifyBeerChanged">
+      <wsdl:output wsaw:Action="http://www.zfogde.com/wcf/BeerInventoryService/BeerInventoryService/NotifyBeerChanged" message="tns:BeerInventoryService_NotifyBeerChanged_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="NotifyLeaveParty">
+      <wsdl:output wsaw:Action="http://www.zfogde.com/wcf/BeerInventoryService/BeerInventoryService/NotifyLeaveParty" message="tns:BeerInventoryService_NotifyLeaveParty_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

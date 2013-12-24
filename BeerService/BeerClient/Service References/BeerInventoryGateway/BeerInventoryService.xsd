@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.zfogde.com/wcf/BeerInventoryService" elementFormDefault="qualified" targetNamespace="http://www.zfogde.com/wcf/BeerInventoryService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="JoinParty">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="JoinPartyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="JoinPartyResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MakeBeerRun">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="guestName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="numberofBeers" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MakeBeerRunResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DrinkBeer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="guestName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DrinkBeerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LeaveParty">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="guestName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LeavePartyResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotifyJoinParty">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="guestName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotifyBeerChanged">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="guestName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="numberofBeers" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotifyLeaveParty">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="guestName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
